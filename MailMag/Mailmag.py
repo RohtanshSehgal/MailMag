@@ -81,10 +81,10 @@ class Mailman:
 
 
 class Gspread:
-    def __init__(self, file_name, sheet_name,row_number):
+    def __init__(self, file_name, sheet_name,column_number):
         self.file_name = file_name
         self.sheet_name = sheet_name
-        self.emailids=row_number
+        self.emailids=column_number
     def authorizers(self):
         scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
                  "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
