@@ -1,0 +1,1 @@
+This is MailMag a library which provice bulk mailing at ease, all the functions are made and you just have to call them!
