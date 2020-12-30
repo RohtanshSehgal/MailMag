@@ -1,4 +1,4 @@
-This is MailMag a library which provice bulk mailing at ease, all the functions are made and you just have to call them!
+This is MailMag a module which provide bulk mailing at ease, all the functions are made and you just have to call them!
 
 There are several functions for two classes  the functions are:
 
@@ -72,7 +72,7 @@ There are several functions for two classes  the functions are:
 
 <b>HOW TO IMPORT:
 
-<em>Put Mailmag.py in your working directory</em>
+Put Mailmag.py in your working directory
 
     from Mailmag import Mailman, Gspread
 
@@ -82,6 +82,6 @@ There are several functions for two classes  the functions are:
 
 Note:
 
-   <em>Emailid used to send emails should be allowed python as a application by google, if not enable it in google account settings.</em>
+   Emailid used to send emails should be allowed python as a application by google, if not enable it in google account settings.
    
-   <i>Currently not available via pip or available at pypi, still in working!</i>
+   Currently not available via pip or available at pypi, still in working!
