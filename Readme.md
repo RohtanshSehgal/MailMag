@@ -83,3 +83,5 @@ There are several functions for two classes  the functions are:
 Note:
 
    <em>Emailid used to send emails should be allowed python as a application by google, if not enable it in google account settings.</em>
+   
+   <i>Currently not available via pip or available at pypi, still in working!</i>
