@@ -9,6 +9,14 @@ class Mailman:
     def __init__(self, email_address, email_password):
         self.EMAIL_ADDRESS = email_address
         self.EMAIL_PASSWORD = email_password
+    
+    def sendingMessage(self, msg):
+        with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
+            smtp.ehlo()
+            smtp.starttls()
+            smtp.ehlo()
+            smtp.login(self.EMAIL_ADDRESS, self.EMAIL_PASSWORD)
+            smtp.send_message(msg)
 
     def simpleemail(self, mail_id, subject, body):
         msg = EmailMessage()
@@ -16,12 +24,7 @@ class Mailman:
         msg["From"] = self.EMAIL_ADDRESS
         msg["To"] = mail_id
         msg.set_content(body)
-        with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
-            smtp.ehlo()
-            smtp.starttls()
-            smtp.ehlo()
-            smtp.login(self.EMAIL_ADDRESS, self.EMAIL_PASSWORD)
-            smtp.send_message(msg)
+        self.sendingMessage(msg)
 
 
     def htmlmail(self, mail_id, subject, html_msg):
@@ -31,12 +34,7 @@ class Mailman:
         msg["To"] = mail_id
         msg.set_content(html_msg)
         msg.add_alternative(html_msg, subtype='html')
-        with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
-            smtp.ehlo()
-            smtp.starttls()
-            smtp.ehlo()
-            smtp.login(self.EMAIL_ADDRESS, self.EMAIL_PASSWORD)
-            smtp.send_message(msg)
+        self.sendingMessage(msg)
 
 
     def mailwithimage(self, mail_id, subject, body, file_name):
@@ -51,12 +49,7 @@ class Mailman:
             file_name = f.name
             file_type = imghdr.what(f.name)
         msg.add_attachment(file_data, maintype='image', subtype=file_type, filename=file_name)
-        with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
-            smtp.ehlo()
-            smtp.starttls()
-            smtp.ehlo()
-            smtp.login(self.EMAIL_ADDRESS, self.EMAIL_PASSWORD)
-            smtp.send_message(msg)
+        self.sendingMessage(msg)
 
 
     def mailwithpdf(self, mail_id, subject, body, file_name):
@@ -71,12 +64,7 @@ class Mailman:
             file_data = f.read()
             file_name = f.name
         msg.add_attachment(file_data, maintype='application', subtype='octet=stream', filename=file_name)
-        with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
-            smtp.ehlo()
-            smtp.starttls()
-            smtp.ehlo()
-            smtp.login(self.EMAIL_ADDRESS, self.EMAIL_PASSWORD)
-            smtp.send_message(msg)
+        self.sendingMessage(msg)
 
 
 
