@@ -24,3 +24,7 @@ There are several functions for two classes  the functions are:
         Functions in Gspread are:
             authorizers-> This only make a connection with your google spreadsheet and return that in a variable
             selectandsave-> This function authorize and returns a list of the items in the row of choosen column.
+
+#How to use:
+Put Mailmag.py in your working directory and use
+       from Mailmag import Mailman, Gspread
